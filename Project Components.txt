@@ -1,0 +1,4 @@
+Project	Components
+Web			-> Controllers, Views
+Core		-> Models, Data Context, Utility functions, Enumerations
+Test		-> Testing classes for the Core project
