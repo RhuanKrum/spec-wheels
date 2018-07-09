@@ -1,0 +1,93 @@
+﻿html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.header {
+    height: 180px;
+    width: 100%;
+    min-width: 1000px;
+    background-color: burlywood;
+    overflow: hidden;
+    top: 0;
+}
+
+.header_menu_left {
+    background-color: cornflowerblue;
+    margin-top: 80px;
+    width: 400px;
+    height: 80px;
+    position: fixed;
+    left: 12%;
+}
+
+.header_menu_right {
+    background-color: darkolivegreen;
+    margin-top: 80px;
+    width: 400px;
+    height: 80px;
+    --float: right;
+    position: fixed;
+    right: 12%;
+}
+
+.header_logo {
+    background-color: aqua;
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.header_logo img {
+    margin: 0 auto;
+    display: block;
+    height: 140px;
+    width: 140px;
+}
+
+.header_logo p {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26px;
+}
+
+.header_menu_navbar {
+}
+
+.header_menu_navbar ul {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    list-style: none;
+}
+
+.header_menu_navbar ul a, .header_menu_navbar ul a:visited {
+    float: left;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 10px;
+    width: 88px;
+    background-color: chocolate;
+    text-decoration: none;
+    border: 1px solid red;
+    color: black;
+}
+
+.footer {
+    height: 40px;
+    width: 100%;
+    background-color: burlywood;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.footer p {
+    text-align: center;
+    margin-top: 10px;
+}
