@@ -1,0 +1,32 @@
+﻿@model SpecWheels.Models.User.LoginUserModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Login", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <fieldset class="form-group">
+        @Html.AntiForgeryToken()
+        <h4>Login</h4>
+        <hr />
+        @Html.ValidationSummary()
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Email, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Password, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Password, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Login" />
+            </div>
+        </div>
+
+    </fieldset>
+}

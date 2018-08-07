@@ -4,3 +4,8 @@
 
 /.vs
 /SpecWheels/.vs/SpecWheels/v15
+/SpecWheels/SpecWheels/App_Data/SpecWheels_log.ldf
+/SpecWheels/SpecWheels/App_Data/SpecWheels.mdf
+/SpecWheels/SpecWheels/App_Data/aspnet-SpecWheels-20180801084045_log.ldf
+/SpecWheels/SpecWheels/App_Data/aspnet-SpecWheels-20180801084045.mdf
+/SpecWheels/SpecWheels/bin
