@@ -1,0 +1,31 @@
+﻿html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.footer {
+    height: 40px;
+    width: 100%;
+    background-color: burlywood;
+    overflow: hidden;
+}
+
+.footer p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+.input-validation-error {
+    background: pink;
+    border: 1px solid red;
+}*/
+
+.merda{
+    background-color: brown;
+}
