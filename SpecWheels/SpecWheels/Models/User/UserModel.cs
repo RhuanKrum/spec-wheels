@@ -27,7 +27,7 @@ namespace SpecWheels.Models.User
         [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }
     }
-    
+
     public class UserModel : IdentityUser
     {
         [Required]
@@ -51,6 +51,9 @@ namespace SpecWheels.Models.User
 
         [Display(Name = "Register Date")]
         public DateTime RegisterDate { get; set; }
+
+        [Display(Name = "Inactive Date")]
+        public DateTime? InactiveDate { get; set; }
 
         //[Display(Name = "Privacy Level")]
         //public UserPrivacyLevelEnum UserPrivacyLevel { get; set; }

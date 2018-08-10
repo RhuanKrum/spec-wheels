@@ -115,6 +115,74 @@ namespace SpecWheels.Controllers
             UserModel account = UserManager.FindById(User.Identity.GetUserId());
             return View(account);
         }
+        //
+        // GET: /Account/Edit
+        [AllowAnonymous]
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/Edit
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(UserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.UserName = model.Email;
+
+                var result = await UserManager.UpdateAsync(model);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("View", "User");
+                }
+                else
+                {
+                    AddErrors(result);
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        // GET: /Account/Edit
+        [AllowAnonymous]
+        public ActionResult Inactivate()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/Delete
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Inactivate(UserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.UserName = model.Email;
+
+                model.InactiveDate = DateTime.Now;
+                var result = await UserManager.UpdateAsync(model);
+                if (result.Succeeded)
+                {
+                   
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    AddErrors(result);
+                }
+            }
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
 
         //[AllowAnonymous]
         //[Route("users/{id:guid}/roles")]
