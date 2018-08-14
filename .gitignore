@@ -9,3 +9,6 @@
 /SpecWheels/SpecWheels/App_Data/aspnet-SpecWheels-20180801084045_log.ldf
 /SpecWheels/SpecWheels/App_Data/aspnet-SpecWheels-20180801084045.mdf
 /SpecWheels/SpecWheels/bin
+/SpecWheels/.vs
+/SpecWheels/SpecWheels/DesignTimeBuild
+/SpecWheels/SpecWheels/Web.config

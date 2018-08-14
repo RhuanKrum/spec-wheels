@@ -67,5 +67,9 @@ namespace SpecWheels.Models.User
             //UserPrivacyLevel = UserPrivacyLevelEnum.User;
         }
         
+        public bool isActive()
+        {
+            return RegisterDate == null;
+        }
     }
 }
