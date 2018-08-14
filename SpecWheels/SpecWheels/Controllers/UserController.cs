@@ -49,8 +49,15 @@ namespace SpecWheels.Controllers
                 var user = await UserManager.FindAsync(model.Email, model.Password);
                 if (user != null)
                 {
+                    if (user.isActive()) { 
+
                     await SignInAsync(user, model.RememberMe);
                     return RedirectToLocal();
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "This user account is inactive.");
+                    }
                 }
                 else
                 {
@@ -132,9 +139,14 @@ namespace SpecWheels.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.UserName = model.Email;
+                var currentUser = UserManager.FindByEmail(model.Email);
 
-                var result = await UserManager.UpdateAsync(model);
+                currentUser.FirstName = model.FirstName;
+                currentUser.LastName = model.LastName;
+                currentUser.Nickname = model.Nickname;
+                currentUser.Password = model.Password;
+
+                var result = await UserManager.UpdateAsync(currentUser);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("View", "User");
@@ -165,14 +177,23 @@ namespace SpecWheels.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.UserName = model.Email;
+                var currentUser = UserManager.FindByEmail(model.Email);
 
-                model.InactiveDate = DateTime.Now;
-                var result = await UserManager.UpdateAsync(model);
+                currentUser.FirstName = model.FirstName;
+                currentUser.LastName = model.LastName;
+                currentUser.Nickname = model.Nickname;
+                currentUser.Password = model.Password;
+                currentUser.InactiveDate = DateTime.Now;
+
+                var result = await UserManager.UpdateAsync(currentUser);
                 if (result.Succeeded)
                 {
-                   
-                    return RedirectToAction("Index", "Home");
+                    // If the inactivated account belongs to the user, log him out
+                    if (User.Identity.GetUserId().Equals(currentUser.Id))
+                    {
+                        Logout();
+                    }
+                    return RedirectToAction("View", "User");
                 }
                 else
                 {
