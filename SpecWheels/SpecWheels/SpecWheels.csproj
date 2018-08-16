@@ -210,6 +210,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DbScripts\Account.sql" />
+    <Content Include="App_Data\DbScripts\BodyType.sql" />
+    <Content Include="App_Data\DbScripts\Break.sql" />
+    <Content Include="App_Data\DbScripts\Color.sql" />
+    <Content Include="App_Data\DbScripts\DriveType.sql" />
+    <Content Include="App_Data\DbScripts\Engine.sql" />
+    <Content Include="App_Data\DbScripts\SubModel.sql" />
+    <Content Include="App_Data\DbScripts\SubModelBodyType.sql" />
+    <Content Include="App_Data\DbScripts\SubModelColor.sql" />
+    <Content Include="App_Data\DbScripts\Suspension.sql" />
+    <Content Include="App_Data\DbScripts\Tire.sql" />
+    <Content Include="App_Data\DbScripts\Wheel.sql" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\logo.png" />
     <Content Include="Content\logo2.png" />
