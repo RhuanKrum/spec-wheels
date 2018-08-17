@@ -1,0 +1,69 @@
+﻿@model SpecWheels.Models.User.UserModel
+
+@{
+    ViewBag.Title = "Edit user";
+}
+@using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <script>
+        $(document).ready(function () {
+            $('.input-validation-error').parents('.form-group').addClass('has-error');
+            $('.input-validation-error').addClass('form-control');
+            $('.field-validation-error').addClass('text-danger');
+
+            $('.validation-summary-errors').each(function () {
+                $(this).addClass('alert');
+                $(this).addClass('alert-danger');
+            });
+
+        });
+        </script>
+    <fieldset class="form-group">
+        @Html.AntiForgeryToken()
+        <h4>@ViewBag.Title</h4>
+        <hr />
+        @Html.ValidationSummary()
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.FirstName, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(a => a.FirstName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.LastName, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.LastName, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(a => a.LastName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Nickname, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Nickname, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(a => a.Nickname)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Email, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Email, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(a => a.Email)
+        </div>
+
+        <div class="form-group has-success">
+            @Html.LabelFor(a => a.Password, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Password, new { @class = "form-control" })
+            <div class="has-error">@Html.ValidationMessageFor(x => x.Password)</div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(a => a.UserPrivacyLevel, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.UserPrivacyLevel, new { @class = "form-control disabled" })
+        </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Save" />
+            </div>
+        </div>
+
+    </fieldset>
+}
