@@ -2,7 +2,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SpecWheels.Models.Break
+namespace SpecWheels.Models.Engine
 {
 
  
@@ -19,7 +19,7 @@ namespace SpecWheels.Models.Break
 
         [Required]
         [MaxLength(48)]
-        [Display(Name = "Band")]
+        [Display(Name = "Brand")]
         public string Brand { get; set; }
 
         [MaxLength(40)]

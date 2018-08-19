@@ -2,18 +2,18 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SpecWheels.Models.Break
+namespace SpecWheels.Models.CarColor
 {
 
  
-    public class SubModelColorModel
+    public class CarColorModel
     {
         [Required]
         [Display(Name = "ColorId")]
         public int ColorId { get; set; }
 
         [Required]
-        [Display(Name = "SubModelId")]
-        public int SubModelId { get; set; }
+        [Display(Name = "CarId")]
+        public int CarId { get; set; }
     }
 }

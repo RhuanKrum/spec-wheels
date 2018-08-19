@@ -2,7 +2,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SpecWheels.Models.Break
+namespace SpecWheels.Models.BodyType
 {
 
  
