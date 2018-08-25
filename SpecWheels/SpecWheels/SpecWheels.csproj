@@ -214,6 +214,8 @@
     <Compile Include="Models\TEMP_DELETE\AccountViewModels.cs" />
     <Compile Include="Models\TEMP_DELETE\IdentityModels.cs" />
     <Compile Include="Models\TEMP_DELETE\ManageViewModels.cs" />
+    <Compile Include="Models\TEMP_DELETE\TemplateDataAccess.cs" />
+    <Compile Include="Models\TEMP_DELETE\TemplateModel.cs" />
     <Compile Include="Models\Break\BreakModel.cs" />
     <Compile Include="Models\User\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
