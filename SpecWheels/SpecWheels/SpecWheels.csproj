@@ -201,9 +201,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BodyType\BodyTypeModel.cs" />
+    <Compile Include="Models\CarColor\CarColorModel.cs" />
+    <Compile Include="Models\CarBodyType\CarBodyTypeModel.cs" />
+    <Compile Include="Models\DriveType\DriveTypeModel.cs" />
+    <Compile Include="Models\Car\CarModel.cs" />
+    <Compile Include="Models\Engine\EngineModel.cs" />
+    <Compile Include="Models\Color\ColorModel.cs" />
+    <Compile Include="Models\Tire\TireModel.cs" />
+    <Compile Include="Models\Wheel\WheelModel.cs" />
+    <Compile Include="Models\Suspension\SuspensionModel.cs" />
     <Compile Include="Models\TEMP_DELETE\AccountViewModels.cs" />
     <Compile Include="Models\TEMP_DELETE\IdentityModels.cs" />
     <Compile Include="Models\TEMP_DELETE\ManageViewModels.cs" />
+    <Compile Include="Models\Break\BreakModel.cs" />
     <Compile Include="Models\User\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -215,9 +226,9 @@
     <Content Include="App_Data\DbScripts\Color.sql" />
     <Content Include="App_Data\DbScripts\DriveType.sql" />
     <Content Include="App_Data\DbScripts\Engine.sql" />
-    <Content Include="App_Data\DbScripts\SubModel.sql" />
-    <Content Include="App_Data\DbScripts\SubModelBodyType.sql" />
-    <Content Include="App_Data\DbScripts\SubModelColor.sql" />
+    <Content Include="App_Data\DbScripts\Car.sql" />
+    <Content Include="App_Data\DbScripts\CarBodyType.sql" />
+    <Content Include="App_Data\DbScripts\CarColor.sql" />
     <Content Include="App_Data\DbScripts\Suspension.sql" />
     <Content Include="App_Data\DbScripts\Tire.sql" />
     <Content Include="App_Data\DbScripts\Wheel.sql" />
@@ -306,6 +317,7 @@
     <Content Include="Views\User\View.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Inactivate.cshtml" />
+    <Content Include="Views\Break\Break.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
