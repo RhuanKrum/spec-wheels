@@ -1,0 +1,65 @@
+﻿@model SpecWheels.Models.Break.BreakModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Html.BeginForm("Register", "Break", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    
+    <script>
+        $(document).ready(function () {
+            $('.input-validation-error').parents('.form-group').addClass('has-error');
+            $('.input-validation-error').addClass('form-control');
+            $('.field-validation-error').addClass('text-danger');
+
+            $('.validation-summary-errors').each(function () {
+                $(this).addClass('alert');
+                $(this).addClass('alert-danger');
+            });
+
+        });
+
+       
+    </script>
+
+    <fieldset class="form-group has-error">
+        @Html.AntiForgeryToken()
+        <h4>Create a new account</h4>
+        <hr />
+        @Html.ValidationSummary()
+
+        <div class="form-group has-error">
+            @Html.LabelFor(a => a.Brand, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Brand, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Brand)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Name, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Size, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Size, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Size)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Type, new { @class = "form-control-label" })
+            @Html.TextBoxFor(a => a.Type, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Type)
+        </div>
+
+        <div id="messages"></div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary" value="Register" />
+            </div>
+        </div>
+
+    </fieldset>
+}

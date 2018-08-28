@@ -197,11 +197,13 @@
     <Compile Include="Controllers\TEMP_DELETE\UserControllero.cs" />
     <Compile Include="Controllers\TEMP_DELETE\HomeController.cs" />
     <Compile Include="Controllers\TEMP_DELETE\ManageController.cs" />
+    <Compile Include="Controllers\BreakController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BodyType\BodyTypeModel.cs" />
+    <Compile Include="Models\Break\BreakDataAccess.cs" />
     <Compile Include="Models\CarColor\CarColorModel.cs" />
     <Compile Include="Models\CarBodyType\CarBodyTypeModel.cs" />
     <Compile Include="Models\DriveType\DriveTypeModel.cs" />
@@ -242,7 +244,7 @@
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -305,10 +307,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-validation\.bower.json" />
     <Content Include="Scripts\jquery-validation\LICENSE.md" />
@@ -320,6 +322,7 @@
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Inactivate.cshtml" />
     <Content Include="Views\Break\Break.cshtml" />
+    <Content Include="Views\Break\Register.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
