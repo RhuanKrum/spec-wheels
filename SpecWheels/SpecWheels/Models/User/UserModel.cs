@@ -8,7 +8,7 @@ namespace SpecWheels.Models.User
     public class ApplicationDbContext : IdentityDbContext<UserModel>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("SpecWheelsConnection")
         {
         }
     }
@@ -69,7 +69,7 @@ namespace SpecWheels.Models.User
         
         public bool isActive()
         {
-            return RegisterDate == null;
+            return InactiveDate == null;
         }
     }
 }
