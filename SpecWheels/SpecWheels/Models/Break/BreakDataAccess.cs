@@ -43,7 +43,7 @@ namespace SpecWheels.Models.Break
 
         public BreakModel Read (int id)
         {
-            var model = new BreakModel();
+            BreakModel model = null;
 
             String sql = "select brand, Name, Size, Type from [Break] where Id=@Id";
 
@@ -55,7 +55,8 @@ namespace SpecWheels.Models.Break
                 command.Connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
-                while (reader.Read()) { 
+                if (reader.Read()) {
+                    model = new BreakModel();
                     model.Id = id;
                     model.Name = reader["Name"].ToString();
                     model.Brand = reader["brand"].ToString();
