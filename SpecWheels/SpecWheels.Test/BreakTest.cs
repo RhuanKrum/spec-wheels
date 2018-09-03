@@ -15,11 +15,10 @@ namespace SpecWheels.Test
             breakModel.Size = "400 mm";
             breakModel.Type = "Racing";
 
-            Assert.IsNotNull(breakModel);
-            //BreakDataAccess breakDataAccess = new BreakDataAccess();
-            //breakDataAccess.Create(breakModel);
+            BreakDataAccess breakDataAccess = new BreakDataAccess();
+            breakDataAccess.Create(breakModel);
 
-            //Assert.ThrowsException(breakDataAccess.Create(breakModel));
+            Assert.IsNotNull(breakModel);
         }
     }
 }
