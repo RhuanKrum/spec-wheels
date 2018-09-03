@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Web;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using System.Configuration;
 
 namespace SpecWheels.Models.Break
 {
@@ -18,14 +19,17 @@ namespace SpecWheels.Models.Break
 
         public BreakDataAccess()
         {
-            appPath = @"C:\Users\daian\source\repos\spec-wheels\SpecWheels\SpecWheels\App_Data";
-            connectionString = @"Data Source=DAYAPC\SQLEXPRESS;AttachDbFilename=" + @appPath + @"\SpecWheels.mdf;Initial Catalog=SpecWheels;Integrated Security=True; User Instance=TRUE";
+            ConnectionStringSettings mySetting = ConfigurationManager.ConnectionStrings["SpecWheelsConnection"];
 
+            if (mySetting == null || string.IsNullOrEmpty(mySetting.ConnectionString))
+                throw new NullReferenceException("Fatal error: missing connecting string in web.config file");
+
+            connectionString = mySetting.ConnectionString;
         }
 
         public bool Create (BreakModel model)
         {
-            String sql = "insert into Break (brand, Name, Size, Type) values (@Brand, @Name, @Size, @Type)";
+            String sql = "insert into [Break] (brand, Name, Size, Type) values (@Brand, @Name, @Size, @Type)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(sql, connection))

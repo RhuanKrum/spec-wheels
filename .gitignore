@@ -12,3 +12,10 @@
 /SpecWheels/.vs
 /SpecWheels/SpecWheels/DesignTimeBuild
 /SpecWheels/SpecWheels/Web.config
+/SpecWheels/packages
+/SpecWheels/SpecWheels.Test/bin/Debug
+/SpecWheels/SpecWheels/App_Data/SpecWheelsConnection.mdf
+/SpecWheels/SpecWheels/App_Data/SpecWheelsConnection_log.ldf
+/SpecWheels/SpecWheels.Test/obj/Debug
+/SpecWheels/SpecWheels/obj/Debug
+/SpecWheels/SpecWheels/.vs
