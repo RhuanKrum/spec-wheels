@@ -9,7 +9,6 @@ namespace SpecWheels.Models.Break
     public class BreakModel
     {
         [Required]
-        
         [Display(Name = "Id")]
         public int Id { get; set; }
 

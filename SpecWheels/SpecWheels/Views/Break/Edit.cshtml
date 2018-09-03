@@ -1,10 +1,10 @@
 ﻿@model SpecWheels.Models.Break.BreakModel
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Edit";
 }
 
-@using (Html.BeginForm("Register", "Break", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Edit", "Break", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     
     <script>
@@ -25,9 +25,15 @@
 
     <fieldset class="form-group has-error">
         @Html.AntiForgeryToken()
-        <h4>Register Break</h4>
+        <h4>Edit Break</h4>
         <hr />
         @Html.ValidationSummary()
+
+        <div class="form-group has-error">
+            @Html.LabelFor(a => a.Id, new { @class = "form-control-label", @readonly = "readonly" })
+            @Html.TextBoxFor(a => a.Id, new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(x => x.Id)
+        </div>
 
         <div class="form-group has-error">
             @Html.LabelFor(a => a.Brand, new { @class = "form-control-label" })
@@ -57,7 +63,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" class="btn btn-primary" value="Register" />
+                <input type="submit" class="btn btn-primary" value="Save" />
             </div>
         </div>
 

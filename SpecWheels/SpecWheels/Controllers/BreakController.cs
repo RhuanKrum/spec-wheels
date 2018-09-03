@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -42,101 +43,83 @@ namespace SpecWheels.Controllers
                 BreakDataAccess breakDataAccess = new BreakDataAccess();
                 breakDataAccess.Create(model);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("List", "Break");
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
         }
 
-
-        
-
-        //
         // GET: /Account/View
-        //[Authorize]
-        //public new ActionResult View()
-        //{
-        //    UserModel account = UserManager.FindById(User.Identity.GetUserId());
-        //    return View(account);
-        //}
-        //
-        // GET: /Account/Edit
-        [AllowAnonymous]
-        public ActionResult Edit()
+        [Authorize]
+        public new ActionResult List()
         {
-            return View();
+            BreakDataAccess breakDataAccess = new BreakDataAccess();
+            List<BreakModel> breakList = breakDataAccess.List();
+
+            return View(breakList);
+        }
+
+        // GET: /Account/View
+        [Authorize]
+        public new ActionResult View(int id)
+        {
+            BreakDataAccess breakDataAccess = new BreakDataAccess();
+            BreakModel model = breakDataAccess.Read(id);
+
+            return View(model);
+        }
+
+        // GET: /Account/Edit
+        [Authorize]
+        public ActionResult Edit(int id)
+        {
+            BreakDataAccess breakDataAccess = new BreakDataAccess();
+            BreakModel model = breakDataAccess.Read(id);
+            return View(model);
         }
 
         //
         // POST: /Account/Edit
-        //[HttpPost]
-        //[AllowAnonymous]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Edit(UserModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var currentUser = UserManager.FindByEmail(model.Email);
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(BreakModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                BreakDataAccess breakDataAccess = new BreakDataAccess();
+                breakDataAccess.Update(model);
+               
+                return RedirectToAction("List", "Break");
+               
+               //AddErrors(result);
+                
+            }
 
-        //        currentUser.FirstName = model.FirstName;
-        //        currentUser.LastName = model.LastName;
-        //        currentUser.Nickname = model.Nickname;
-        //        currentUser.Password = model.Password;
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
 
-        //        var result = await UserManager.UpdateAsync(currentUser);
-        //        if (result.Succeeded)
-        //        {
-        //            return RedirectToAction("View", "User");
-        //        }
-        //        else
-        //        {
-        //            AddErrors(result);
-        //        }
-        //    }
-
-        //    // If we got this far, something failed, redisplay form
-        //    return View(model);
-        //}
-
-      
         //
-        //// POST: /Account/Delete
-        //[HttpPost]
-        //[AllowAnonymous]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Inactivate(UserModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var currentUser = UserManager.FindByEmail(model.Email);
+        // POST: /Break/Delete
+        
+        [Authorize]
+        public async Task<ActionResult> Delete(int id)
+        {
+            
+                BreakDataAccess breakDataAccess = new BreakDataAccess();
+                breakDataAccess.Delete(id);
 
-        //        currentUser.FirstName = model.FirstName;
-        //        currentUser.LastName = model.LastName;
-        //        currentUser.Nickname = model.Nickname;
-        //        currentUser.Password = model.Password;
-        //        currentUser.InactiveDate = DateTime.Now;
+                return RedirectToAction("List", "Break");
 
-        //        var result = await UserManager.UpdateAsync(currentUser);
-        //        if (result.Succeeded)
-        //        {
-        //            // If the inactivated account belongs to the user, log him out
-        //            if (User.Identity.GetUserId().Equals(currentUser.Id))
-        //            {
-        //                Logout();
-        //            }
-        //            return RedirectToAction("View", "User");
-        //        }
-        //        else
-        //        {
-        //            AddErrors(result);
-        //        }
-        //    }
-        //    // If we got this far, something failed, redisplay form
-        //    return View(model);
-        //}
+                //AddErrors(result);
 
+            
 
+            // If we got this far, something failed, redisplay form
+            
+        }
 
 
         private void AddErrors(IdentityResult result)
