@@ -11,29 +11,27 @@
     @Html.ValidationSummary()
 
     <div class="form-group">
-        @Html.LabelFor(a => a.Name, new { @class = "form-control-label" })
-        @Html.TextBoxFor(a => a.Name, new { @class = "form-control disabled", @readonly = "readonly" })
+        @Html.LabelFor(model => model.Name, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control disabled", @readonly = "readonly" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(a => a.Brand, new { @class = "form-control-label" })
-        @Html.TextBoxFor(a => a.Brand, new { @class = "form-control disabled", @readonly = "readonly" })
+        @Html.LabelFor(model => model.Brand, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Brand, new { @class = "form-control disabled", @readonly = "readonly" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(a => a.Size, new { @class = "form-control-label" })
-        @Html.TextBoxFor(a => a.Size, new { @class = "form-control disabled", @readonly = "readonly" })
+        @Html.LabelFor(model => model.Size, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Size, new { @class = "form-control disabled", @readonly = "readonly" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(a => a.Type, new { @class = "form-control-label" })
-        @Html.TextBoxFor(a => a.Type, new { @class = "form-control disabled", @readonly = "readonly" })
+        @Html.LabelFor(model => model.Type, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Type, new { @class = "form-control disabled", @readonly = "readonly" })
     </div>
 
-    
-
-    @*<a class="btn btn-primary" href="@Url.Action("Edit", "User")">Edit User</a>
-    <a class="btn btn-primary" href="@Url.Action("Inactivate", "User")">Inactivate User</a>*@
+    @Html.ActionLink("Edit", "Edit", "Break", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Delete", "Delete", "Break", new { id = Model.Id }, new { @class = "btn btn-primary" })
 
 </fieldset>
     

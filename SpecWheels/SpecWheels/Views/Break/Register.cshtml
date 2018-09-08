@@ -30,26 +30,26 @@
         @Html.ValidationSummary()
 
         <div class="form-group has-error">
-            @Html.LabelFor(a => a.Brand, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.Brand, new { @class = "form-control" })
+            @Html.LabelFor(model => model.Brand, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Brand, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Brand)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(a => a.Name, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+            @Html.LabelFor(model => model.Name, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Name)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(a => a.Size, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.Size, new { @class = "form-control" })
+            @Html.LabelFor(model => model.Size, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Size, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Size)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(a => a.Type, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.Type, new { @class = "form-control" })
+            @Html.LabelFor(model => model.Type, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Type, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Type)
         </div>
 
