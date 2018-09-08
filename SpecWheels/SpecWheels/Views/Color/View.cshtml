@@ -1,0 +1,22 @@
+﻿@model SpecWheels.Models.Color.ColorModel
+
+@{
+    ViewBag.Title = "View Color";
+}
+
+<fieldset class="form-group">
+    @Html.AntiForgeryToken()
+    <h4>Color details</h4>
+    <hr />
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control disabled", @readonly = "readonly" })
+    </div>
+
+    @Html.ActionLink("Edit", "Edit", "Color", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Delete", "Delete", "Color", new { id = Model.Id }, new { @class = "btn btn-primary" })
+
+</fieldset>
+    
