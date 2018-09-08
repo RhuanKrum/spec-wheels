@@ -1,0 +1,53 @@
+﻿@model SpecWheels.Models.Color.ColorModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm("Edit", "Color", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    
+    <script>
+        $(document).ready(function () {
+            $('.input-validation-error').parents('.form-group').addClass('has-error');
+            $('.input-validation-error').addClass('form-control');
+            $('.field-validation-error').addClass('text-danger');
+
+            $('.validation-summary-errors').each(function () {
+                $(this).addClass('alert');
+                $(this).addClass('alert-danger');
+            });
+
+        });
+
+       
+    </script>
+
+    <fieldset class="form-group has-error">
+        @Html.AntiForgeryToken()
+        <h4>Edit Color</h4>
+        <hr />
+        @Html.ValidationSummary()
+
+        <div class="form-group has-error">
+            @Html.LabelFor(model => model.Id, new { @class = "form-control-label", @readonly = "readonly" })
+            @Html.TextBoxFor(model => model.Id, new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(x => x.Id)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+
+        <div id="messages"></div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </div>
+
+    </fieldset>
+}
