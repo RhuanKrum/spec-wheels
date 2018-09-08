@@ -25,38 +25,38 @@
         @Html.ValidationSummary()
 
         <div class="form-group">
-            @Html.LabelFor(a => a.FirstName, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control disabled" })
-            @Html.ValidationMessageFor(a => a.FirstName)
+            @Html.LabelFor(model => model.FirstName, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(model => model.FirstName)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(a => a.LastName, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.LastName, new { @class = "form-control disabled" })
-            @Html.ValidationMessageFor(a => a.LastName)
+            @Html.LabelFor(model => model.LastName, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(model => model.LastName)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(a => a.Nickname, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.Nickname, new { @class = "form-control disabled" })
-            @Html.ValidationMessageFor(a => a.Nickname)
+            @Html.LabelFor(model => model.Nickname, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Nickname, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(model => model.Nickname)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(a => a.Email, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.Email, new { @class = "form-control disabled" })
-            @Html.ValidationMessageFor(a => a.Email)
+            @Html.LabelFor(model => model.Email, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control disabled" })
+            @Html.ValidationMessageFor(model => model.Email)
         </div>
 
         <div class="form-group has-success">
-            @Html.LabelFor(a => a.Password, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.Password, new { @class = "form-control" })
+            @Html.LabelFor(model => model.Password, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
             <div class="has-error">@Html.ValidationMessageFor(x => x.Password)</div>
         </div>
 
         @*<div class="form-group">
-            @Html.LabelFor(a => a.UserPrivacyLevel, new { @class = "form-control-label" })
-            @Html.TextBoxFor(a => a.UserPrivacyLevel, new { @class = "form-control disabled" })
+            @Html.LabelFor(model => model.UserPrivacyLevel, new { @class = "form-control-label" })
+            @Html.TextBoxFor(model => model.UserPrivacyLevel, new { @class = "form-control disabled" })
         </div>*@
 
         <div class="form-group">
