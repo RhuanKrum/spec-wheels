@@ -1,0 +1,32 @@
+﻿@model SpecWheels.Models.Tire.TireModel
+
+@{
+    ViewBag.Title = "View Tire";
+}
+
+<fieldset class="form-group">
+    @Html.AntiForgeryToken()
+    <h4>Tire details</h4>
+    <hr />
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control disabled", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Brand, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Brand, new { @class = "form-control disabled", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Size, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Size, new { @class = "form-control disabled", @readonly = "readonly" })
+    </div>
+
+    @Html.ActionLink("Edit", "Edit", "Tire", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Delete", "Delete", "Tire", new { id = Model.Id }, new { @class = "btn btn-primary" })
+
+</fieldset>
+    
