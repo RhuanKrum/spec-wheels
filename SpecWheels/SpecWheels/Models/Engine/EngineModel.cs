@@ -23,7 +23,7 @@ namespace SpecWheels.Models.Engine
         public string Brand { get; set; }
 
         [MaxLength(40)]
-        [Display(Name = "HorsePowser")]
+        [Display(Name = "HorsePower")]
         public string HorsePower { get; set; }
 
     }

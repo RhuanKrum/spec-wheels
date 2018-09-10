@@ -194,6 +194,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\EngineController.cs" />
     <Compile Include="Controllers\TireController.cs" />
     <Compile Include="Controllers\SuspensionController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Models\Color\ColorDataAccess.cs" />
     <Compile Include="Models\DriveType\DriveTypeModel.cs" />
     <Compile Include="Models\Car\CarModel.cs" />
+    <Compile Include="Models\Engine\EngineDataAccess.cs" />
     <Compile Include="Models\Engine\EngineModel.cs" />
     <Compile Include="Models\Color\ColorModel.cs" />
     <Compile Include="Models\Tire\TireDataAccess.cs" />
@@ -317,6 +319,10 @@
     <Content Include="Views\Color\List.cshtml" />
     <Content Include="Views\Color\Register.cshtml" />
     <Content Include="Views\Color\View.cshtml" />
+    <Content Include="Views\Engine\Edit.cshtml" />
+    <Content Include="Views\Engine\List.cshtml" />
+    <Content Include="Views\Engine\Register.cshtml" />
+    <Content Include="Views\Engine\View.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
