@@ -16,6 +16,20 @@
     <script src="~/Scripts/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/Scripts/bootstrap-4-navbar.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('.input-validation-error').parents('.form-group').addClass('has-error');
+            $('.input-validation-error').addClass('form-control');
+            $('.field-validation-error').addClass('text-danger');
+
+            $('.validation-summary-errors').each(function () {
+                $(this).addClass('alert');
+                $(this).addClass('alert-danger');
+            });
+
+        });
+    </script>
+
 </head>
 <body>
 

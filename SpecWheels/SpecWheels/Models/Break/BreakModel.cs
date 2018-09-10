@@ -28,6 +28,7 @@ namespace SpecWheels.Models.Break
         [Display(Name = "Size")]
         public string Size { get; set; }
 
+        [Required]
         [MaxLength(40)]
         [Display(Name = "Type")]
         public string Type { get; set; }
