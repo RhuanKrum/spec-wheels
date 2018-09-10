@@ -195,6 +195,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\TireController.cs" />
+    <Compile Include="Controllers\SuspensionController.cs" />
+    <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BreakController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -205,11 +207,13 @@
     <Compile Include="Models\Break\BreakDataAccess.cs" />
     <Compile Include="Models\CarColor\CarColorModel.cs" />
     <Compile Include="Models\CarBodyType\CarBodyTypeModel.cs" />
+    <Compile Include="Models\Color\ColorDataAccess.cs" />
     <Compile Include="Models\DriveType\DriveTypeModel.cs" />
     <Compile Include="Models\Car\CarModel.cs" />
     <Compile Include="Models\Engine\EngineModel.cs" />
     <Compile Include="Models\Color\ColorModel.cs" />
     <Compile Include="Models\Tire\TireDataAccess.cs" />
+    <Compile Include="Models\Suspension\SuspensionDataAccess.cs" />
     <Compile Include="Models\Tire\TireModel.cs" />
     <Compile Include="Models\Wheel\WheelModel.cs" />
     <Compile Include="Models\Suspension\SuspensionModel.cs" />
@@ -305,6 +309,14 @@
     <Content Include="Views\Tire\List.cshtml" />
     <Content Include="Views\Tire\Register.cshtml" />
     <Content Include="Views\Tire\View.cshtml" />
+    <Content Include="Views\Suspension\Edit.cshtml" />
+    <Content Include="Views\Suspension\List.cshtml" />
+    <Content Include="Views\Suspension\Register.cshtml" />
+    <Content Include="Views\Suspension\View.cshtml" />
+    <Content Include="Views\Color\Edit.cshtml" />
+    <Content Include="Views\Color\List.cshtml" />
+    <Content Include="Views\Color\Register.cshtml" />
+    <Content Include="Views\Color\View.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
