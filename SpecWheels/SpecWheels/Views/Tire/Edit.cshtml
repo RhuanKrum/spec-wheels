@@ -6,23 +6,7 @@
 
 @using (Html.BeginForm("Edit", "Tire", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    
-    <script>
-        $(document).ready(function () {
-            $('.input-validation-error').parents('.form-group').addClass('has-error');
-            $('.input-validation-error').addClass('form-control');
-            $('.field-validation-error').addClass('text-danger');
-
-            $('.validation-summary-errors').each(function () {
-                $(this).addClass('alert');
-                $(this).addClass('alert-danger');
-            });
-
-        });
-
-       
-    </script>
-
+ 
     <fieldset class="form-group has-error">
         @Html.AntiForgeryToken()
         <h4>Edit Tire</h4>
