@@ -1,0 +1,51 @@
+﻿@model List<SpecWheels.Models.Wheel.WheelModel>
+
+@{
+    ViewBag.Title = "List Wheel";
+}
+
+<fieldset class="form-group">
+    @Html.AntiForgeryToken()
+    <h4>Wheel List</h4>
+    <hr />
+    @Html.ValidationSummary()
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Size</th>
+                <th scope="col">Color</th>
+                <th scope="col">View</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Name</td>
+                <td>@item.Brand</td>
+                <td>@item.Size</td>
+                <td>@item.Color</td>
+                <td>
+                    @Html.ActionLink("View", "View", "Wheel", new { id = item.Id }, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Wheel", new { id = item.Id }, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", "Wheel", new { id = item.Id }, new { @class = "btn btn-primary" })
+                </td>
+
+            </tr>               
+            }
+        </tbody>
+    </table>
+
+</fieldset>
+    
