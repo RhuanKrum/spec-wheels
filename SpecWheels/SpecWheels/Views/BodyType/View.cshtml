@@ -1,0 +1,22 @@
+﻿@model SpecWheels.Models.BodyType.BodyTypeModel
+
+@{
+    ViewBag.Title = "View BodyType";
+}
+
+<fieldset class="form-group">
+    @Html.AntiForgeryToken()
+    <h4>BodyType details</h4>
+    <hr />
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @class = "form-control-label" })
+        @Html.TextBoxFor(model => model.Description, new { @class = "form-control disabled", @readonly = "readonly" })
+    </div>
+
+    @Html.ActionLink("Edit", "Edit", "BodyType", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Delete", "Delete", "BodyType", new { id = Model.Id }, new { @class = "btn btn-primary" })
+
+</fieldset>
+    
