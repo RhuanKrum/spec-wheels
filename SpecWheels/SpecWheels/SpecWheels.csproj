@@ -194,6 +194,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\BodyTypeController.cs" />
     <Compile Include="Controllers\WheelController.cs" />
     <Compile Include="Controllers\EngineController.cs" />
     <Compile Include="Controllers\TireController.cs" />
@@ -206,6 +207,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BodyType\BodyTypeModel.cs" />
+    <Compile Include="Models\BodyType\BodyTypeDataAccess.cs" />
     <Compile Include="Models\Break\BreakDataAccess.cs" />
     <Compile Include="Models\CarColor\CarColorModel.cs" />
     <Compile Include="Models\CarBodyType\CarBodyTypeModel.cs" />
@@ -329,6 +331,10 @@
     <Content Include="Views\Wheel\List.cshtml" />
     <Content Include="Views\Wheel\Register.cshtml" />
     <Content Include="Views\Wheel\View.cshtml" />
+    <Content Include="Views\BodyType\Edit.cshtml" />
+    <Content Include="Views\BodyType\List.cshtml" />
+    <Content Include="Views\BodyType\Register.cshtml" />
+    <Content Include="Views\BodyType\View.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
